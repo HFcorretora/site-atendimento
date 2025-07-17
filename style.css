@@ -97,7 +97,7 @@ section {
   height: auto;
   min-height: 240px;
   max-height: 400px;
-  background: url('hero.jpg') center/cover no-repeat;
+  background: url('banner.jpg') center/cover no-repeat;
   border-radius: 10px;
   background-position: center top;
 }
