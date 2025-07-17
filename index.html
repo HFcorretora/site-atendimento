@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Solicite sua via</title>
+
+  <!-- Fonte Montserrat -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+
+  <!-- Boxicons para ícones -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- MENU FIXO COM MOBILE -->
+  <header class="navbar reveal">
+    <div class="container">
+      <h1 class="logo">Atendimento</h1>
+      <nav id="menu-links">
+        <a href="#home"><i class="bx bx-home"></i> Início</a>
+        <a href="#quem-somos"><i class="bx bx-info-circle"></i> Quem Somos</a>
+        <!-- Nossos Serviços removido do menu -->
+        <a href="#services"><i class="bx bx-briefcase-alt-2"></i> Central de Atendimento</a>
+        <a href="#faq"><i class="bx bx-help-circle"></i> FAQ</a>
+        <a href="#" onclick="getwhatsapp('Olá! Gostaria de atendimento')">
+          <i class="bx bxl-whatsapp"></i> WhatsApp
+        </a>
+      </nav>
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    </div>
+  </header>
+
+  <!-- HOME -->
+  <section id="home" class="reveal">
+    <div class="banner"></div>
+    <div class="text-slider">
+      <p>Solicite Conosco Sua Via Atualizada!</p>
+      <a href="#" onclick="getwhatsapp('Gostaria de iniciar atendimento')" class="btn-primary">
+        <i class="bx bx-download"></i> BOLETO SEGUNDA VIA
+      </a>
+    </div>
+  </section>
+
+  <!-- QUEM SOMOS -->
+  <section id="quem-somos" class="section-container reveal">
+    <h2><i class="bx bx-info-circle"></i> Quem Somos</h2>
+    <div class="quem-somos-content">
+      <img src="med.jpg" alt="Equipe Atendimento" />
+      <div>
+        <p>
+          Somos uma equipe dedicada a facilitar o atendimento e o suporte financeiro para você. Com anos de experiência,
+          nossa missão é garantir agilidade, transparência e confiança no seu atendimento.
+        </p>
+        <p>
+          Atendemos diversas demandas como segunda via de boletos, quitação de parcelas e planos personalizados.
+          Conte conosco para tornar seu processo mais simples e seguro.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CENTRAL DE ATENDIMENTO -->
+  <section id="services" class="section-container reveal">
+    <div class="godown" onclick="scrollToSection()">
+      <span><span>&#8595;</span></span>
+    </div>
+    <h2><i class="bx bx-briefcase-alt-2"></i> Central de Atendimento</h2>
+    <p>Suporte em Recursos Financeiros e Seguros de Saúde. Online e Eficiente.</p>
+
+    <div class="service-item reveal">
+      <h3><i class="bx bx-file"></i> 2ª Via de Boleto</h3>
+      <p>Solicite a sua em nossa central de atendimento.</p>
+      <a href="#" onclick="getwhatsapp('Gostaria de iniciar atendimento')" class="btn-primary">
+        <i class="bx bx-download"></i> Segunda Via Boleto
+      </a>
+    </div>
+
+    <div class="service-item reveal">
+      <h3><i class="bx bx-time-five"></i> Mensalidades em Atraso</h3>
+      <p>Solicite mais informações em nosso atendimento.</p>
+      <a href="#" onclick="getwhatsapp('Gostaria de iniciar atendimento')" class="btn-primary">
+        <i class="bx bx-check-double"></i> Quitar Parcelas
+      </a>
+    </div>
+
+    <div class="service-item reveal">
+      <h3><i class="bx bx-user"></i> Plano Pessoa Física</h3>
+      <p>Solicite mais informações em nosso atendimento.</p>
+      <a href="#" onclick="getwhatsapp('Gostaria de solicitar informações sobre planos')" class="btn-primary">
+        <i class="bx bx-user-plus"></i> Contrato Plano
+      </a>
+    </div>
+  </section>
+
+  <!-- PERGUNTAS FREQUENTES -->
+  <section id="faq" class="section-container reveal">
+    <h2><i class="bx bx-help-circle"></i> Perguntas Frequentes</h2>
+    <p class="faq-intro">Esclareça suas dúvidas aqui</p>
+    
+    <div class="faq-item">
+      <h3>Quais são os serviços oferecidos?</h3>
+      <p>Oferecemos soluções completas de desenvolvimento web, desde criação de sites, manutenção, até consultoria em design e experiência do usuário.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Como posso entrar em contato?</h3>
+      <p>Você pode entrar em contato através do nosso WhatsApp, e-mail ou diretamente pelo formulário de contato no site.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Quanto tempo leva para desenvolver um site?</h3>
+      <p>O tempo depende da complexidade do projeto. Para sites simples, o prazo é de 7 a 15 dias, enquanto projetos mais complexos podem levar até 30 dias ou mais.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Posso alterar o design do meu site depois que ele for criado?</h3>
+      <p>Sim, oferecemos manutenção contínua e ajustes no design de acordo com a necessidade do cliente após a entrega do site.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Vocês oferecem suporte após a entrega do site?</h3>
+      <p>Sim, oferecemos suporte contínuo e manutenção do site, garantindo que tudo continue funcionando corretamente.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer reveal">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <h2>Atendimento</h2>
+      </div>
+      <nav class="footer-nav">
+        <a href="#home"><i class="bx bx-home"></i> Início</a>
+        <a href="#quem-somos"><i class="bx bx-info-circle"></i> Quem Somos</a>
+        <!-- Nossos Serviços removido do footer -->
+        <a href="#services"><i class="bx bx-briefcase-alt-2"></i> Central de Atendimento</a>
+        <a href="#faq"><i class="bx bx-help-circle"></i> FAQ</a>
+        <a href="#" onclick="getwhatsapp('Olá! Gostaria de atendimento')"><i class="bx bxl-whatsapp"></i> WhatsApp</a>
+      </nav>
+      <div class="footer-contact">
+        <p><i class="bx bx-phone"></i> <a href="tel:+556292454182">+55 62 9245-4182</a></p>
+        <p><i class="bx bxl-whatsapp"></i> <a href="https://wa.me/556292454182" target="_blank">WhatsApp</a></p>
+      </div>
+      <div class="footer-social">
+        <a href="#" aria-label="Facebook"><i class="bx bxl-facebook-square"></i></a>
+        <a href="#" aria-label="Instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="bx bxl-linkedin-square"></i></a>
+      </div>
+    </div>
+    <div class="footer-copy">
+      <p>© 2025 - Todos os Direitos Reservados | <a href="#home">Voltar ao Início</a></p>
+    </div>
+  </footer>
+
+  <!-- Botão flutuante WhatsApp -->
+  <div class="whatsapp-float" onclick="openWhatsapp()">
+    <i class="bx bxl-whatsapp"></i>
+  </div>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+</body>
+</html>
