@@ -1,471 +1,232 @@
-/* Reset básico */
+/* RESET */
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   font-family: 'Montserrat', sans-serif;
-  background-color: #f0f6f4;
-  color: #004d33;
+  background: #f4f4f4;
+  color: #333;
   line-height: 1.6;
 }
 
-/* === Navbar fixa === */
-.navbar {
-  position: fixed;
-  width: 100%;
-  background-color: #007a50;
-  color: white;
-  top: 0;
-  left: 0;
-  z-index: 9999;
-  box-shadow: 0 2px 10px rgb(0 0 0 / 0.15);
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
-.navbar .container {
+section {
+  padding: 40px 20px;
+}
+
+/* CONTAINERS */
+.container,
+.section-container,
+.footer-container {
   max-width: 1100px;
   margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  padding: 0 20px;
+}
+
+/* NAVBAR */
+.navbar {
+  background: #0a4f2f;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 999;
   padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .navbar .logo {
-  font-size: 1.8rem;
-  font-weight: 700;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.navbar nav {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
 }
 
 .navbar nav a {
-  color: white;
-  text-decoration: none;
-  margin-left: 20px;
-  font-weight: 600;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  transition: color 0.3s ease;
-}
-
-.navbar nav a:hover {
-  color: #a1d8b1;
+  color: #fff;
+  font-size: 0.9rem;
 }
 
 .menu-toggle {
   display: none;
-  font-size: 2rem;
+  font-size: 1.5rem;
   cursor: pointer;
-  user-select: none;
-  color: white;
+  color: #fff;
 }
 
-/* === Home === */
-#home {
-  position: relative;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+@media (max-width: 768px) {
+  .navbar nav {
+    display: none;
+    flex-direction: column;
+    background-color: #0a4f2f;
+    width: 100%;
+    position: absolute;
+    top: 65px;
+    left: 0;
+    padding: 10px;
+  }
+
+  .navbar nav.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+/* BANNER */
+.banner {
+  width: 100%;
+  height: auto;
+  min-height: 240px;
+  max-height: 400px;
+  background: url('hero.jpg') center/cover no-repeat;
+  border-radius: 10px;
+  background-position: center top;
+}
+
+/* TEXTO HOME */
+.text-slider {
   text-align: center;
-  padding: 0 20px;
-  margin-top: 65px; /* para navbar fixa */
-  color: white;
-  overflow: hidden;
+  margin-top: 30px;
 }
 
-#home .banner {
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-image: url('hero.jpg');
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  z-index: 0;
-}
-
-#home .text-slider {
-  position: relative;
-  font-size: 2.5rem;
-  font-weight: 700;
-  max-width: 600px;
-  z-index: 1;
+.text-slider p {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
 }
 
 .btn-primary {
-  background-color: #00a15d;
-  border: none;
-  padding: 14px 36px;
-  font-size: 1.1rem;
-  font-weight: 700;
+  background: #1aa37a;
   color: white;
-  border-radius: 30px;
-  margin-top: 25px;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-}
-
-.btn-primary:hover {
-  background-color: #007a50;
-}
-
-/* === Sections Gerais === */
-.section-container {
-  padding: 80px 20px;
-  max-width: 1100px;
-  margin: 40px auto;
-  text-align: center;
-  background-color: #e6f2ed;
-  border-radius: 10px;
-}
-
-.section-container h2 {
-  font-size: 2rem;
-  color: #007a50;
-  margin-bottom: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;
-}
-
-/* Quem Somos */
-#quem-somos .quem-somos-content {
-  display: flex;
-  gap: 40px;
-  align-items: center;
-  justify-content: center;
-  max-width: 900px;
-  margin: 0 auto;
-  text-align: left;
-}
-
-#quem-somos img {
-  width: 320px;
-  max-width: 100%;
-  border-radius: 15px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-}
-
-#quem-somos p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #004d33;
-}
-
-/* Nossos Serviços */
-.servicos-list {
-  display: flex;
-  gap: 30px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.servico-item {
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  padding: 25px;
-  width: 280px;
-  text-align: center;
-  transition: transform 0.3s ease;
-}
-
-.servico-item:hover {
-  transform: translateY(-8px);
-}
-
-.servico-item i {
-  font-size: 36px;
-  color: #00a15d;
-  margin-bottom: 12px;
-}
-
-.servico-item h3 {
-  margin-bottom: 15px;
-  color: #007a50;
-  font-size: 1.3rem;
-}
-
-/* Central de Atendimento */
-.service-item {
-  background-color: white;
-  padding: 30px;
-  margin-bottom: 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-  text-align: left;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.service-item:hover {
-  transform: translateY(-10px);
-}
-
-.service-item h3 {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: #007a50;
-  margin-bottom: 12px;
-}
-
-.service-item p {
-  margin-bottom: 20px;
-}
-
-/* Godown (seta para baixo) */
-.godown {
-  cursor: pointer;
-  margin-bottom: 40px;
-  text-align: center;
-}
-
-.godown span span {
-  font-size: 32px;
-  color: #00a15d;
-  display: inline-block;
-  animation: bounce 1.5s infinite;
-}
-
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-/* FAQ */
-#faq {
-  background-color: #f4f9f6;
-  padding: 60px 20px;
-  max-width: 1100px;
-  margin: 40px auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
-
-#faq h2 {
-  color: #007a50;
-  font-size: 2rem;
-  margin-bottom: 10px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  justify-content: center;
-}
-
-.faq-intro {
-  font-size: 1.1rem;
-  color: #004d33;
-  margin-bottom: 40px;
-  text-align: center;
-}
-
-.faq-item {
-  background: white;
+  padding: 10px 20px;
   border-radius: 8px;
-  padding: 20px 25px;
-  margin-bottom: 18px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-  transition: box-shadow 0.3s ease;
-  text-align: left;
+  display: inline-block;
+  font-weight: bold;
 }
 
-.faq-item:hover {
-  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+.btn-primary i {
+  margin-right: 5px;
 }
 
-.faq-item h3 {
-  margin-top: 0;
-  margin-bottom: 12px;
-  color: #005837;
-  font-size: 1.2rem;
-  font-weight: 700;
-}
-
-.faq-item p {
-  margin: 0;
-  font-size: 1rem;
-  line-height: 1.5;
-  color: #333;
-}
-
-/* Footer */
-.footer {
-  background-color: #004d33;
-  color: white;
-  padding: 50px 20px 20px;
-  margin-top: 60px;
-}
-
-.footer-container {
-  max-width: 1100px;
-  margin: auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 30px;
-}
-
-.footer-logo h2 {
-  font-size: 1.8rem;
-  font-weight: 700;
-}
-
-.footer-nav {
+/* QUEM SOMOS */
+.quem-somos-content {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   align-items: center;
 }
 
-.footer-nav a {
-  color: white;
-  font-weight: 600;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  transition: color 0.3s ease;
+.quem-somos-content img {
+  max-width: 300px;
+  width: 100%;
+  border-radius: 12px;
 }
 
-.footer-nav a:hover {
-  color: #a1d8b1;
+.quem-somos-content div {
+  flex: 1;
 }
 
-.footer-contact p {
+@media (max-width: 768px) {
+  .quem-somos-content {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* SERVIÇOS */
+.service-item {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 20px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+.service-item h3 {
   margin-bottom: 10px;
+}
+
+.service-item p {
+  margin-bottom: 15px;
+}
+
+/* FAQ */
+.faq-item {
+  background: #fff;
+  border-left: 4px solid #1aa37a;
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+/* FOOTER */
+.footer {
+  background: #0a4f2f;
+  color: #fff;
+  padding: 40px 20px 20px;
+  text-align: center;
+}
+
+.footer-container {
   display: flex;
-  align-items: center;
-  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
 }
 
+.footer-nav,
+.footer-contact,
+.footer-social {
+  flex: 1 1 150px;
+}
+
+.footer-nav a,
 .footer-contact a {
-  color: white;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.footer-contact a:hover {
-  text-decoration: underline;
+  color: #fff;
+  display: block;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
 }
 
 .footer-social a {
-  font-size: 1.8rem;
-  margin-right: 12px;
-  color: white;
-  transition: color 0.3s ease;
-}
-
-.footer-social a:hover {
-  color: #a1d8b1;
+  font-size: 1.5rem;
+  margin-right: 10px;
 }
 
 .footer-copy {
-  text-align: center;
-  margin-top: 30px;
-  font-size: 0.9rem;
-  color: #9bd4b8;
+  margin-top: 20px;
+  font-size: 0.8rem;
 }
 
-.footer-copy a {
-  color: #9bd4b8;
-  text-decoration: none;
-}
-
-.footer-copy a:hover {
-  text-decoration: underline;
-}
-
-/* Botão flutuante WhatsApp */
+/* BOTÃO WHATSAPP */
 .whatsapp-float {
   position: fixed;
-  bottom: 25px;
-  right: 25px;
-  background-color: #25d366;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
+  bottom: 20px;
+  right: 20px;
+  background: #25d366;
   color: white;
-  font-size: 2.4rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 15px;
+  border-radius: 50%;
+  font-size: 24px;
+  z-index: 1000;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.6);
-  transition: background-color 0.3s ease;
-  z-index: 9999;
-}
-
-.whatsapp-float:hover {
-  background-color: #128c4a;
-}
-
-/* Responsividade */
-@media (max-width: 900px) {
-  .quem-somos-content {
-    flex-direction: column;
-  }
-
-  .servicos-list {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .servico-item {
-    width: 90%;
-  }
-}
-
-@media (max-width: 600px) {
-  #home .text-slider {
-    font-size: 1.8rem;
-  }
-
-  .navbar nav a {
-    margin-left: 10px;
-    font-size: 0.9rem;
-  }
-
-  .footer-container {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .faq-item {
-    padding: 15px 18px;
-  }
-}
-
-/* Animação reveal - fade e subida */
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.7s ease;
-}
-
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.footer-copy {
-  text-align: center;
-  margin-top: 30px;
-  font-size: 0.95rem;
-  color: #9bd4b8;
-  line-height: 1.6;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
