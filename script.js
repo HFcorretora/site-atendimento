@@ -4,25 +4,24 @@ function toggleMenu() {
   nav.classList.toggle('active');
 }
 
-// Scroll suave para seção services
+// Scroll suave para seção "services"
 function scrollToSection() {
   document.getElementById('services').scrollIntoView({ behavior: 'smooth' });
 }
 
-// WhatsApp - abrir link já com mensagem
-function getwhatsapp(msg) {
-  const phone = '5521999999999'; // substitua pelo seu número
-  const url = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
-  window.open(url, '_blank');
+// Abrir WhatsApp com mensagem personalizada
+function getwhatsapp(message, phone = '551151073015') {
+  const link = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+  window.open(link, '_blank');
 }
 
-// Botão flutuante WhatsApp
-function openWhatsapp() {
-  const phone = '5521999999999'; // substitua pelo seu número
-  window.open(`https://wa.me/${phone}`, '_blank');
+// Botão flutuante de WhatsApp (mensagem padrão)
+function openWhatsapp(phone = '551151073015') {
+  const message = 'Olá! Gostaria de atendimento';
+  getwhatsapp(message, phone);
 }
 
-// Reveal on scroll (fade + subir)
+// Reveal on scroll (efeito de aparecer ao rolar a página)
 function reveal() {
   const reveals = document.querySelectorAll('.reveal');
   for (let el of reveals) {
@@ -40,13 +39,3 @@ function reveal() {
 
 window.addEventListener('scroll', reveal);
 window.addEventListener('load', reveal);
-
-function getwhatsapp(message, phone = '556292454182') {
-  const link = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-  window.open(link, '_blank');
-}
-
-function openWhatsapp(phone = '556292454182') {
-  const message = 'Olá! Gostaria de atendimento';
-  getwhatsapp(message, phone);
-}
